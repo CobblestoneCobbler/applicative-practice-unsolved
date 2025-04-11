@@ -6,9 +6,15 @@ import { data } from "../data/data";
 
 export function allPlanetsMoonsCount(data) {
   // Your code goes here...
+  const planets = data.planets;
+  return planets
+    .filter(function (n) {
+      return n.moons != undefined;
+    })
+    .reduce(function (n, i) {
+      return n + i.moons.length; //I saw afterwards moonCount exists but it already works
+    }, 0);
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-12"

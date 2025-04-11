@@ -1,6 +1,6 @@
 /**
  * Make sure to read the e16.md file!
- * For this exercise we want you to make a custom `find` method. 
+ * For this exercise we want you to make a custom `find` method.
  * In order to do this it is ok to use any type of FOR loops.
  * REQUIREMENT: A find function should
  * * Take an array of things
@@ -8,12 +8,17 @@
  * The function MUST NOT use the find() method.
  */
 
-
 export function find(array, callback) {
   // Your code goes here...
-  
+  let result;
+  for (let i = 0; i < array.length; i++) {
+    if (callback(array[i])) {
+      result = array[i];
+      break;
+    }
+  }
+  return result;
 }
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-16"

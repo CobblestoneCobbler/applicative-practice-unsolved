@@ -6,9 +6,11 @@ import { data } from "../data/data";
 
 export function getOrbitalPeriodsSum(data) {
   // Your code goes here...
+  const asteroids = data.asteroids;
+  return asteroids.reduce(function (n, i) {
+    return n + i.orbitalPeriod;
+  }, 0);
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-14"
