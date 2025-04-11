@@ -26,7 +26,6 @@ export function getGreatestDiscoveryYear(data) {
   return maxBy(yearCt, (z) => z[1])[0];
 
   // feel free to import your `maxBy` or `minBy` methods from previous lessons
-  //I need to make a 2d array of { year, count}, call maxby and pass it the count function, then return the year of that index
 }
 
 // === TEST YOURSELF ===
