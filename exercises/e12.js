@@ -6,14 +6,12 @@ import { data } from "../data/data";
 
 export function allPlanetsMoonsCount(data) {
   // Your code goes here...
-  const planets = data.planets;
-  return planets
-    .filter(function (n) {
-      return n.moons != undefined;
-    })
-    .reduce(function (n, i) {
-      return n + i.moons.length; //I saw afterwards moonCount exists but it already works
-    }, 0);
+  return data.planets.reduce((acc, planet) => {
+    if (planet.moonsCount != undefined) {
+      acc += planet.moonsCount;
+    }
+    return acc;
+  }, 0);
 }
 
 // === TEST YOURSELF ===

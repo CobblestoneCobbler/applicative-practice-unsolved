@@ -6,18 +6,17 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
-  const planets = data.planets;
-  return planets
-    .filter(function (n) {
-      return n.moons != undefined;
-    })
-    .find(function (n) {
-      return (
-        n.moons.find(function (n) {
-          return n === moonName;
+  return data.planets.find((planet) => {
+    if (planet.moons != undefined) {
+      if (
+        planet.moons.find((moon) => {
+          return moon === moonName;
         }) != undefined
-      );
-    }).name;
+      ) {
+        return planet;
+      }
+    }
+  }).name;
 }
 
 // === TEST YOURSELF ===
